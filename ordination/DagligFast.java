@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class DagligFast extends Ordination {
 
-    private dose
+    private int[] doser = new int[4];
 
-    public DagligFast (LocalDate startDato, LocalDate slutDato, int morgenAntal, int middagAntal, int aftenAntal, int natAntal,) {
-        super();
+    public DagligFast (LocalDate startDato, LocalDate slutDato, Patient patient, int morgenAntal, int middagAntal, int aftenAntal, int natAntal,) {
+        super(startDato, slutDato, patient);
 
     }
     public Dosis opretDosis(LocalTime tid, double antal) {
