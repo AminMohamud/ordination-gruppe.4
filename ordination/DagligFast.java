@@ -8,17 +8,9 @@ import java.util.ArrayList;
 public class DagligFast extends Ordination {
 
     private int[] doser = new int[4];
-    private int morgenAntal;
-    private int middagAntal;
-    private int AftensAntal;
-    private int natAntal;
 
     public DagligFast (LocalDate startDato, LocalDate slutDato, Patient patient, int morgenAntal, int middagAntal, int aftenAntal, int natAntal,) {
         super(startDato, slutDato, patient);
-        this.morgenAntal = morgenAntal;
-        this.middagAntal = middagAntal;
-        this.AftensAntal = aftenAntal;
-        this.natAntal = natAntal;
         doser[0] = new Dosis(LocalTime.of(6), morgenAntal);
 
     }
