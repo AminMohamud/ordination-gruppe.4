@@ -2,6 +2,7 @@ package controller;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.List;
 
 import ordination.DagligFast;
@@ -39,8 +40,19 @@ public class Controller {
 	 */
 	public PN opretPNOrdination(LocalDate startDen, LocalDate slutDen,
 			Patient patient, Laegemiddel laegemiddel, double antal) {
-		// TODO
-		return null;
+
+			if (startDen.isAfter(slutDen)) {
+				throw new IllegalArgumentException("Startdato kan ikke være efter slutdato");
+			}
+
+			if (startDen == null || slutDen == null || patient == null || laegemiddel == null) {
+				throw new IllegalArgumentException("startDen, slutDen, patient og laegemiddel må ikke være null");
+			}
+
+			if (antal < 0) {
+				throw new IllegalArgumentException("Antal skal være større end eller lig med nul");
+			}
+				return //opretter og returnerer en PN ordination
 	}
 
 	/**
@@ -53,6 +65,18 @@ public class Controller {
 			LocalDate slutDen, Patient patient, Laegemiddel laegemiddel,
 			double morgenAntal, double middagAntal, double aftenAntal,
 			double natAntal) {
+
+		if (startDen.isAfter(slutDen)) {
+			throw new IllegalArgumentException("Startdato kan ikke være efter slutdato");
+
+		}
+
+		if (startDen == null || slutDen == null || patient == null || laegemiddel == null) {
+			throw new IllegalArgumentException("startDen, slutDen, patient og laegemiddel må ikke være null");
+		}
+		if (morgenAntal <= 0 || middagAntal <= 0 || aftenAntal <= 0 || natAntal <= 0) {
+			throw new IllegalArgumentException("Antal skal være større end eller lig med nul");
+		}
 		// TODO
 		return null;
 	}
@@ -68,6 +92,19 @@ public class Controller {
 	public DagligSkaev opretDagligSkaevOrdination(LocalDate startDen,
 			LocalDate slutDen, Patient patient, Laegemiddel laegemiddel,
 			LocalTime[] klokkeSlet, double[] antalEnheder) {
+
+		if (startDen.isAfter(slutDen)) {
+			throw new IllegalArgumentException("Startdato kan ikke være efter slutdato");
+		}
+		if
+		// klokkeslet ikke lig med antalenheder
+		if (startDen == null || slutDen == null || patient == null || laegemiddel == null) {
+			throw new IllegalArgumentException("startDen, slutDen, patient og laegemiddel må ikke være null");
+		}
+
+		if
+		// alle tal i antalEnheder > 0
+
 		// TODO
 		return null;
 	}
