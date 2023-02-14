@@ -8,3 +8,4 @@ public class App {
 		Application.launch(StartVindue.class);
 	}
 }
+//commit push test
