@@ -15,7 +15,7 @@ public abstract class Ordination {
     public Ordination(LocalDate startDen, LocalDate slutDen, Patient patient) {
         this.startDen = startDen;
         this.slutDen = slutDen;
-        patient.addPatient(this);
+        patient.addOrdination(this);
     }
 
     public Laegemiddel getLaegemiddel() {
