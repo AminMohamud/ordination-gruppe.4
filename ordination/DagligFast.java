@@ -19,6 +19,7 @@ public class DagligFast extends Ordination {
         this.middagAntal = middagAntal;
         this.AftensAntal = aftenAntal;
         this.natAntal = natAntal;
+        doser[0] = new Dosis(LocalTime.of(6), morgenAntal);
 
     }
     public Dosis opretDosis(LocalTime tid, double antal) {
