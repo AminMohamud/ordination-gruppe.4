@@ -10,6 +10,7 @@ public class DagligSkaev extends Ordination {
 
     public DagligSkaev() {
         super();
+        doser = new ArrayList<>(doser);
     }
 
     public Dosis opretDosis(LocalTime tid, double antal) {

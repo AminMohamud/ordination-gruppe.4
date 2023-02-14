@@ -1,5 +1,6 @@
 package ordination;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
@@ -7,8 +8,9 @@ public class DagligFast extends Ordination {
 
     ArrayList<Dosis> doser = new ArrayList<>();
 
-    public DagligFast () {
+    public DagligFast (LocalDate startDato, LocalDate slutDato, Patient patient) {
         super();
+        doser = new ArrayList<>();
     }
     public Dosis opretDosis(LocalTime tid, double antal) {
         Dosis dosis = new Dosis(tid, antal);
