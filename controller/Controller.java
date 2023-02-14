@@ -98,6 +98,7 @@ public class Controller {
 		}
 		if
 		// klokkeslet ikke lig med antalenheder
+
 		if (startDen == null || slutDen == null || patient == null || laegemiddel == null) {
 			throw new IllegalArgumentException("startDen, slutDen, patient og laegemiddel må ikke være null");
 		}
@@ -116,6 +117,10 @@ public class Controller {
 	 * Pre: ordination og dato er ikke null
 	 */
 	public void ordinationPNAnvendt(PN ordination, LocalDate dato) {
+
+		if (ordination == null || dato == null) {
+			throw new IllegalArgumentException("ordination og dato må ikke være null");
+		}
 		// TODO
 	}
 
@@ -126,6 +131,10 @@ public class Controller {
 	 * Pre: patient og lægemiddel er ikke null
 	 */
 	public double anbefaletDosisPrDoegn(Patient patient, Laegemiddel laegemiddel) {
+
+		if (patient == null || laegemiddel == null) {
+			throw new IllegalArgumentException("patient og laegemiddel må ikke være null");
+		}
 		//TODO
 		return 0;
 	}
@@ -137,6 +146,10 @@ public class Controller {
 	 */
 	public int antalOrdinationerPrVægtPrLægemiddel(double vægtStart,
 			double vægtSlut, Laegemiddel laegemiddel) {
+
+		if (laegemiddel == null) {
+			throw new IllegalArgumentException("laegemiddel må ikke være null");
+		}
 		// TODO
 		return 0;
 	}
