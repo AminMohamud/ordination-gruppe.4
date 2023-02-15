@@ -52,7 +52,7 @@ public class Controller {
 			if (antal < 0) {
 				throw new IllegalArgumentException("Antal skal være større end eller lig med nul");
 			}
-				return //opretter og returnerer en PN ordination
+				return null;//opretter og returnerer en PN ordination
 	}
 
 	/**
@@ -70,7 +70,6 @@ public class Controller {
 			throw new IllegalArgumentException("Startdato kan ikke være efter slutdato");
 
 		}
-
 		if (startDen == null || slutDen == null || patient == null || laegemiddel == null) {
 			throw new IllegalArgumentException("startDen, slutDen, patient og laegemiddel må ikke være null");
 		}
@@ -96,17 +95,13 @@ public class Controller {
 		if (startDen.isAfter(slutDen)) {
 			throw new IllegalArgumentException("Startdato kan ikke være efter slutdato");
 		}
-		if
+		if (klokkeSlet.length-1 != antalEnheder.length-1) {
+			throw new IllegalArgumentException("Der skal angives antal enheder for hvert klokkeslet");
+		}
 		// klokkeslet ikke lig med antalenheder
-
 		if (startDen == null || slutDen == null || patient == null || laegemiddel == null) {
 			throw new IllegalArgumentException("startDen, slutDen, patient og laegemiddel må ikke være null");
 		}
-
-		if
-		// alle tal i antalEnheder > 0
-
-		// TODO
 		return null;
 	}
 
