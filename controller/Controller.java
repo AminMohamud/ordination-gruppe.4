@@ -104,7 +104,9 @@ public class Controller {
 		if (startDen == null || slutDen == null || patient == null || laegemiddel == null) {
 			throw new IllegalArgumentException("startDen, slutDen, patient og laegemiddel må ikke være null");
 		}
-		return null;
+		DagligSkaev ds = new DagligSkaev(startDen, slutDen, patient, klokkeSlet, antalEnheder);
+		ds.setLaegemiddel(laegemiddel);
+		return ds;
 	}
 
 	/**
@@ -114,11 +116,11 @@ public class Controller {
 	 * Pre: ordination og dato er ikke null
 	 */
 	public void ordinationPNAnvendt(PN ordination, LocalDate dato) {
-
-		if (ordination == null || dato == null) {
-			throw new IllegalArgumentException("ordination og dato må ikke være null");
+		if (dato.isAfter(ordination.getStartDen()) && dato.isBefore(ordination.getSlutDen())) {
+			ordination.givDosis(dato);
+		} else {
+			throw new IllegalArgumentException("error");
 		}
-		// TODO
 	}
 
 	/**
@@ -128,12 +130,13 @@ public class Controller {
 	 * Pre: patient og lægemiddel er ikke null
 	 */
 	public double anbefaletDosisPrDoegn(Patient patient, Laegemiddel laegemiddel) {
-
-		if (patient == null || laegemiddel == null) {
-			throw new IllegalArgumentException("patient og laegemiddel må ikke være null");
+		if (patient.getVaegt() < 25) {
+			return patient.getVaegt() * laegemiddel.getEnhedPrKgPrDoegnLet();
+		} else if (patient.getVaegt() > 120) {
+			return patient.getVaegt() * laegemiddel.getEnhedPrKgPrDoegnTung();
+		} else {
+			return patient.getVaegt() * laegemiddel.getEnhedPrKgPrDoegnNormal();
 		}
-		//TODO
-		return 0;
 	}
 
 	/**
