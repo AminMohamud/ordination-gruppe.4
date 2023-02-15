@@ -26,8 +26,7 @@ public class DagligSkaev extends Ordination {
 
     @Override
     public double samletDosis() {
-        long daysbetween = ChronoUnit.DAYS.between(startDato,slutDato);
-        return doegnDosis() * daysbetween;
+        return doegnDosis() * super.antalDage();
     }
 
     @Override

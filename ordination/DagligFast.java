@@ -27,13 +27,12 @@ public class DagligFast extends Ordination {
     }
     @Override
     public double samletDosis() {
-        return DAYS.between(startDato, slutDato) * doegnDosis();
+        return super.antalDage() * doegnDosis();
     }
 
     @Override
     public double doegnDosis() {
         double doegnDosis = 0;
-
         for (int i = 0; i <= doser.length; i++) {
             doegnDosis =+ doser[i].getAntal();
         }
