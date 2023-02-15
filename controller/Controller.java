@@ -5,11 +5,7 @@ import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
 
-import ordination.DagligFast;
-import ordination.DagligSkaev;
-import ordination.Laegemiddel;
-import ordination.PN;
-import ordination.Patient;
+import ordination.*;
 import storage.Storage;
 
 public class Controller {
@@ -144,14 +140,18 @@ public class Controller {
 	 * ordinationer.
 	 * Pre: laegemiddel er ikke null
 	 */
-	public int antalOrdinationerPrVægtPrLægemiddel(double vægtStart,
-			double vægtSlut, Laegemiddel laegemiddel) {
-
-		if (laegemiddel == null) {
-			throw new IllegalArgumentException("laegemiddel må ikke være null");
+	public int antalOrdinationerPrVægtPrLægemiddel(double vægtStart, double vægtSlut, Laegemiddel laegemiddel) {
+		int result = 0;
+		for (Patient p : storage.getAllPatienter()) {
+			if (vægtStart <= p.getVaegt() && p.getVaegt() <= vægtSlut) {
+				for (Ordination o : p.getOrdinationer()) {
+					if (o.getLaegemiddel() == laegemiddel) {
+						result++;
+					}
+				}
+			}
 		}
-		// TODO
-		return 0;
+		return result;
 	}
 
 	public List<Patient> getAllPatienter() {
