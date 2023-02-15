@@ -16,7 +16,6 @@ public class DagligSkaev extends Ordination {
         super(startDato, slutDato, patient);
         this.startDato = startDato;
         this.slutDato = slutDato;
-        doser = new ArrayList<>(doser);
     }
 
     public Dosis opretDosis(LocalTime tid, double antal, Patient patient) {
