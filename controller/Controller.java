@@ -52,7 +52,9 @@ public class Controller {
 			if (antal < 0) {
 				throw new IllegalArgumentException("Antal skal være større end eller lig med nul");
 			}
-				return null;//opretter og returnerer en PN ordination
+			PN pn = new PN(startDen, slutDen, antal, patient);
+			pn.setLaegemiddel(laegemiddel);
+			return pn;
 	}
 
 	/**
@@ -68,16 +70,16 @@ public class Controller {
 
 		if (startDen.isAfter(slutDen)) {
 			throw new IllegalArgumentException("Startdato kan ikke være efter slutdato");
-
 		}
 		if (startDen == null || slutDen == null || patient == null || laegemiddel == null) {
 			throw new IllegalArgumentException("startDen, slutDen, patient og laegemiddel må ikke være null");
 		}
-		if (morgenAntal <= 0 || middagAntal <= 0 || aftenAntal <= 0 || natAntal <= 0) {
+		if (morgenAntal < 0 || middagAntal < 0 || aftenAntal < 0 || natAntal < 0) {
 			throw new IllegalArgumentException("Antal skal være større end eller lig med nul");
 		}
-		// TODO
-		return null;
+		DagligFast df = new DagligFast(startDen, slutDen, patient, morgenAntal, middagAntal, aftenAntal, natAntal);
+		df.setLaegemiddel(laegemiddel);
+		return df;
 	}
 
 	/**

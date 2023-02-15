@@ -16,7 +16,7 @@ public class DagligFast extends Ordination {
     private LocalDate startDato;
     private LocalDate slutDato;
 
-    public DagligFast (LocalDate startDato, LocalDate slutDato, Patient patient, int morgenAntal, int middagAntal, int aftenAntal, int natAntal) {
+    public DagligFast (LocalDate startDato, LocalDate slutDato, Patient patient, double morgenAntal, double middagAntal, double aftenAntal, double natAntal) {
         super(startDato, slutDato, patient);
         this.startDato = startDato;
         this.slutDato = slutDato;
