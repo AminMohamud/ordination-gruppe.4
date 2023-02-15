@@ -94,7 +94,7 @@ public class Controller {
 			throw new IllegalArgumentException("Startdato kan ikke være efter slutdato");
 		}
 		if (klokkeSlet.length-1 != antalEnheder.length-1) {
-			throw new IllegalArgumentException("Der skal angives antal enheder for hvert klokkeslet");
+			throw new IllegalArgumentException("Der mangler dosis for et angivet klokkeslæt");
 		}
 		// klokkeslet ikke lig med antalenheder
 		if (startDen == null || slutDen == null || patient == null || laegemiddel == null) {
