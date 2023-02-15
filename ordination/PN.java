@@ -1,6 +1,7 @@
 package ordination;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 public class PN extends Ordination {
@@ -30,7 +31,11 @@ public class PN extends Ordination {
     }
 
     public double doegnDosis() {
-        return (getAntalGangeGivet() * antalEnheder) / (super.antalDage());
+        if (datoer.size() == 0) {
+            return 0;
+        } else {
+            return (antalEnheder * datoer.size()) / (1.00 * (1+ ChronoUnit.DAYS.between(datoer.get(0), datoer.get(datoer.size() - 1))));
+        }
     }
 
     @Override
