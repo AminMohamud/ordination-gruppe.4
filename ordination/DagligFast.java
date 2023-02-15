@@ -11,7 +11,7 @@ public class DagligFast extends Ordination {
 
     private Dosis[] doser = new Dosis[4];
 
-    public DagligFast (LocalDate startDato, LocalDate slutDato, Patient patient, int morgenAntal, int middagAntal, int aftenAntal, int natAntal,) {
+    public DagligFast (LocalDate startDato, LocalDate slutDato, Patient patient, int morgenAntal, int middagAntal, int aftenAntal, int natAntal) {
         super(startDato, slutDato, patient);
         doser[0] = new Dosis(LocalTime.of(6,00), morgenAntal);
         doser[1] = new Dosis(LocalTime.of(12,00), middagAntal);
@@ -20,6 +20,7 @@ public class DagligFast extends Ordination {
     }
     @Override
     public double samletDosis() {
+
         return 0;
     }
 
@@ -27,10 +28,10 @@ public class DagligFast extends Ordination {
     public double doegnDosis() {
         double doegnDosis = 0;
 
-        if ()
-
-
-        return 0;
+        for (int i = 0; i <= doser.length; i++) {
+            doegnDosis =+ doser[i].getAntal();
+        }
+        return doegnDosis;
     }
 
     @Override
