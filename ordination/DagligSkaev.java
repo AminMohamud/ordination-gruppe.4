@@ -38,8 +38,12 @@ public class DagligSkaev extends Ordination {
         return result;
     }
 
+    public ArrayList<Dosis> getDoser() {
+        return doser;
+    }
+
     @Override
     public String getType() {
-        return null;
+        return "DagligSkaev";
     }
 }

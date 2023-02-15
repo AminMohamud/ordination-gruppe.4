@@ -43,6 +43,10 @@ public class Patient {
         }
     }
 
+    public ArrayList<Ordination> getOrdinationer() {
+        return ordinations;
+    }
+
     @Override
     public String toString(){
         return navn + "  " + cprnr;

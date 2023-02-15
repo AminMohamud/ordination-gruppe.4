@@ -25,6 +25,11 @@ public class DagligFast extends Ordination {
         doser[2] = new Dosis(LocalTime.of(18,00), aftenAntal);
         doser[3] = new Dosis(LocalTime.of(23,00), natAntal);
     }
+
+    public Dosis[] getDoser() {
+        return doser;
+    }
+
     @Override
     public double samletDosis() {
         return super.antalDage() * doegnDosis();
@@ -41,7 +46,7 @@ public class DagligFast extends Ordination {
 
     @Override
     public String getType() {
-        return null;
+        return "dagligFast";
     }
     // TODO
 }
