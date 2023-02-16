@@ -20,6 +20,7 @@ public class DagligSkaev extends Ordination {
         }
     }
 
+
     public Dosis opretDosis(LocalTime tid, double antal) {
         Dosis dosis = new Dosis(tid, antal);
         doser.add(dosis);
