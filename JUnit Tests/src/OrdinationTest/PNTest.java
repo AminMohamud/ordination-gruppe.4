@@ -87,26 +87,4 @@ class PNTest {
         assertSame(forventetSvar, aktueltOutput);
     }
 
-
-    @Test
-    void doegnDosis() {
-        //Arrange
-
-        // Act
-
-        //Assert
-
-
-    }
-
-    @Test
-    void samletDosis() {
-        //Arrange
-
-        // Act
-
-        //Assert
-
-
-    }
 }
