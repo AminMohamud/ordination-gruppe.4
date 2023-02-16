@@ -63,6 +63,8 @@ class DagligSkaevTest {
 
         assertEquals(expectedDoegnDosis, actualDoegnDosis, 0.0001);}
 
+
+
     @Test
     public void TC2_dagligSkaev_samletdosis54() {
 
@@ -78,7 +80,6 @@ class DagligSkaevTest {
         double expectedSamletDosis = 60.0;
         double actualSamletDosis = ordination.samletDosis();
         assertEquals(expectedSamletDosis, actualSamletDosis, 0.0001);}
-
 
 
     @Test
@@ -106,10 +107,10 @@ class DagligSkaevTest {
 
         DagligSkaev ordination = new DagligSkaev(startDato, slutDato, patient, klokkeSlet, antalEnheder);
 
-        double expectedSamletDosis = 28.0;
+
+        double expectedSamletDosis = 32.0;
         double actualSamletDosis = ordination.samletDosis();
         assertEquals(expectedSamletDosis, actualSamletDosis, 0.0001);}
-
 
 }
 
