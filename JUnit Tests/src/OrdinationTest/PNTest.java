@@ -1,9 +1,6 @@
 package OrdinationTest;
 
-import ordination.Laegemiddel;
-import ordination.Ordination;
-import ordination.PN;
-import ordination.Patient;
+import ordination.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
