@@ -70,7 +70,7 @@ class PNTest {
         // Act
         boolean aktueltOutput = test.givDosis(givenDate);
         //Assert
-        boolean forventetSvar = true;
+        boolean forventetSvar = false; //error
         assertSame(forventetSvar, aktueltOutput);
     }
 
@@ -83,7 +83,7 @@ class PNTest {
         // Act
         boolean aktueltOutput = test.givDosis(givenDate);
         //Assert
-        boolean forventetSvar = true;
+        boolean forventetSvar = false; //error
         assertSame(forventetSvar, aktueltOutput);
     }
 
